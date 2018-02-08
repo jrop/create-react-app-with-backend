@@ -1,0 +1,36 @@
+{
+  "name": "create-react-app-with-backend",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:server & (cd client && npm run build)",
+    "build:server": "babel -d build src",
+    "develop": "concurrently --names server,client \"npm run develop:server\" \"npm run develop:client\"",
+    "develop:server": "nodemon -r @babel/register src/index.js",
+    "develop:client": "cd client && npm run start",
+    "lint": "npm run prettier -- -l",
+    "lint:fix": "npm run prettier -- --write",
+    "prepack": "npm run build",
+    "prettier": "prettier '{src,client/src}/**/*.{js,css,json}'",
+    "start": "node build/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.39",
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "@babel/register": "^7.0.0-beta.39",
+    "concurrently": "^3.5.1",
+    "husky": "^0.14.3",
+    "nodemon": "^1.14.12",
+    "prettier": "^1.10.2"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.2"
+  },
+  "files": [
+    "build",
+    "client/build"
+  ]
+}
