@@ -1,5 +1,7 @@
 # Create React App - With Backend
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jrop/create-react-app-with-backend.svg)](https://greenkeeper.io/)
+
 This project is a barebones boilerplate for:
 
 * A `create-react-app` frontend--located in `client`--and
